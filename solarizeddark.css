@@ -1,4 +1,4 @@
-/* define solarized colors */
+/* -- Define Solarized Colors ------------------------------------------ */
 :root {
   --base03: #002b36;
   --base02: #073642;
@@ -17,10 +17,401 @@
   --cyan: #2aa198;
   --green: #859900; 
 }
+/* --------------------------------------------------------------------- */
 
 
+
+/* -- Main header ------------------------------------------------------ */
+/* Main header background */
+header#pm_header-desktop {
+  background: var(--base03);
+}
+
+/* Background of the logo on the top left */
+header#pm_header-desktop a.logo {
+  background-color: var(--base03);
+}
+
+/* Background of the navigation buttons on top right (settings, contacts, etc) */
+/* Currently unnecessary if you want it to be the same color as the rest of the heading*/
+
+header#pm_header-desktop ul.navigation {
+  background: var(--base03);
+}
+
+
+/* Text color of the nav buttons on the top right (settings, contacts, etc) */
+header#pm_header-desktop ul.navigation > li > a {
+  color: var(--base0);
+}
+
+/* Text color of the nav buttons on the top right (settings, contacts, etc) on hover */
+header#pm_header-desktop ul.navigation > li > a:hover {
+  color: var(--base1);
+}
+
+/* Icon color of the nav buttons on the top right (settings, contacts, etc) */
+/* Currently unnecessary if you want it to be the same color as the text for these buttons*/
+/*
+header#pm_header-desktop ul.navigation > li > a > span .fa {
+  color: var(--base0);
+}
+*/
+
+/* Color top shadow that indicates what "tab" nav menu item is active (settings, contacts) */
+/* saw the "color" item in another theme, but haven't been able to figure out what it affects */
+header#pm_header-desktop ul.navigation > li.active {
+  box-shadow: 0 6px 0 0 var(--violet) inset;
+  color: var(--violet);
+}
+
+/* Color top shadow that indicates what "tab" nav menu item you are hovering over (settings, contacts)*/
+/* again, the color attribute doesn't seem to be used anywhere? */
+header#pm_header-desktop ul.navigation > li:hover {
+  box-shadow: 0 6px 0 0 var(--blue) inset;
+  color: var(--blue);
+  border-radius: 0px;
+}
+
+/* Color of the text in the tab nav menu dropdowns (Report Bug, Profile)*/
+header#pm_header-desktop ul.navigation > li .pm_dropdown .user b, header#pm_header-desktop ul.navigation > li .pm_dropdown .user strong, html.protonmail .help {
+  color: var(--base0) !important;
+}
+
+/* I think this is supposed to be the text color on hover for the tab nav menu dropdowns */
+/* Doesn't seem to work? */
+header#pm_header-desktop ul.navigation > li .pm_dropdown .user b:hover, header#pm_header-desktop ul.navigation > li .pm_dropdown .user strong:hover, html.protonmail .help:hover {
+  color: var(--red);
+}
+
+/* Background and Text color of the logout button under profile in tab nav menu dropdown */
+header#pm_header-desktop ul.navigation > li .pm_dropdown .pm_button.primary {
+  background: var(--base02) !important;
+  color: var(--base0) !important;
+}
+
+/* Background and text color of the logout button on hover (under profile in tab nav menu dropdown) */
+header#pm_header-desktop ul.navigation > li .pm_dropdown .pm_button.primary:hover {
+  background: var(--base02) !important;
+  border-color: var(--blue);
+  color: var(--blue) !important;
+}
+
+
+/* Search box full field background color */
+form.searchForm fieldset {
+  background: var(--base02) !important;
+  border-radius: 2px;
+}
+
+/* Search box input area background and text color */
+form.searchForm fieldset input.query {
+  background: var(--base02)  !important;
+  color: var(--base0) !important;
+  border-radius: 2px;
+}
+
+/* Search box submit button text color (magnifying glass)*/
+form.searchForm fieldset #closeAdvSearch:hover, form.searchForm fieldset button[type=submit]:hover {
+  color: var(--base0);
+}
+
+/*Search box dropdown icon indicator text color (reverse carot) */
+form.searchForm fieldset button[type=button] {
+  color: var(--base0);
+  border-radius: 2px;
+}
+
+/* Search box dropdown icon background and text color on hover & click */
+form.searchForm fieldset button[type=button]:hover {
+  background: var(--base01);
+  color: var(--base0);
+}
+
+/* Seems to adjust the border radius on the advances search dropdown */
+/* I didn't really notice much difference, but didn't look very hard*/
+form.searchForm #advancedSearchDropdown {
+  border-radius: 2px;
+}
+
+/* Seems to adjust the border radius on the advances search dropdown */
+/* I didn't really notice much difference, but didn't look very hard*/
+form.searchForm.adv fieldset {
+  border-radius: 2px 2px 0 0;
+}
+
+/* --------------------------------------------------------------------- */
 
 /* -- Left side bar ---------------------------------------------------- */
+/* Left side bar background */
 body section.sidebar {
   background: var(--base03);
 }
+
+/* Compose button colors! */
+body section.sidebar a.compose {
+  background: var(--violet);
+  border-color: var(--base02);
+  color: var(--base02);
+}
+
+/* Compose button colors on hover! */
+body section.sidebar a.compose:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--base02);
+}
+
+/* focus button colors! (save settings buttons, etc) */
+.pm_button.primary {
+  background: var(--violet);
+  border-color: var(--base02);
+  color: var(--base02);
+}
+
+/* focus button hover colors (save settings, etc) */
+.pm_button.primary:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--base02);
+}
+
+/* focus button pressed colors (save settings, etc) */
+.pm_button.primary:active, .pm_button.primary:focus {
+  background: var(--blue);
+  border-color: var(--base02);
+  color: var(--base02);
+}
+
+/* Main list text color (Inbox, Drafts, etc) */
+body section.sidebar ul.menu li a {
+  color: var(--base1);
+}
+
+/* Main list text color on hover (Inbox, Drafts, etc) */
+body section.sidebar ul.menu li a:hover {
+  color: var(--blue);
+}
+/* --------------------------------------------------------------------- */
+
+
+/* -- Main pane -------------------------------------------------------- */
+/* Color of text on various buttons (mark read, mark unread, trash, etc) */
+.pm_buttons, .pm_buttons a {
+  color: var(--base0);
+}
+
+/* Color of the indicator for which messages are selected */
+.conversation.marked::before {
+  background: var(--blue);
+  width: 5px;
+}
+
+
+
+
+/* --------------------------------------------------------------------- */
+
+
+/*
+
+
+
+=[]trfbody section.sidebar ul.menu li.active a, body section.sidebar ul.menu li.active a {
+  color: #fff;
+}
+
+body section.sidebar ul.menu li.active a i.fa, body section.sidebar ul.menu li.active a i.fa:hover {
+  color: #ED7D3A !important;
+  opacity: 1;
+}
+
+body section.sidebar ul.menu li a .fa-repeat {
+  color: #fff;
+  opacity: 1;
+}
+
+body section.sidebar ul.menu li a i.fa {
+  color: #fff;
+  opacity: 0.5;
+}
+
+body section.sidebar ul.menu li a i.fa:hover, body section.sidebar ul.menu li a:hover i.fa {
+  color: #fff;
+  opacity: 1;
+}
+
+body section.sidebar ul.menu li a em {
+  color: #fff;
+  opacity: 0.5;
+}
+
+body section.sidebar div.labels ul li a {
+  color: #fff;
+  opacity: 0.5;
+}
+
+body section.sidebar div.labels ul li a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+body section.sidebar div.footer div.link a, body section.sidebar a.version {
+  color: #fff;
+  opacity: 0.5;
+}
+
+body section.sidebar div.footer div.link a:hover, body section.sidebar a.version:hover {
+  color: #ED7D3A;
+  opacity: 1;
+}
+
+body section.sidebar div.footer div.storage strong {
+  color: #fff;
+  opacity: 0.5;
+}
+
+body section.sidebar div.footer .bar em {
+  background: #ED7D3A;
+  height: 3px;
+}
+
+body section.sidebar div.footer .bar {
+  background: #fff;
+  height: 3px;
+}
+
+
+
+
+#pm_composer .composer header {
+  background: #0F4C5C;
+  color: #fff;
+}
+
+p a {
+  color: #ED7D3A;
+}
+
+#pm_composer .composer footer .pm_button {
+  background: #fff;
+  color: #0F4C5C;
+}
+
+#pm_composer .composer footer .pm_button:hover {
+  background: #fff;
+  color: #0F4C5C;
+}
+
+#pm_composer .composer footer .pm_button.primary {
+  background: #0F4C5C;
+  color: #fff;
+}
+
+#pm_composer .composer footer .pm_button.primary:hover {
+  background: #ED7D3A;
+  color: #fff;
+}
+
+
+
+
+#pm_settings .pm_tabs {
+  background: #e6eaf0;
+}
+
+#pm_settings .pm_tabs li a.pm_button {
+  color: #0F4C5C;
+  border-color: #e6eaf0;
+}
+
+#pm_settings .pm_tabs li a.pm_button:hover {
+  color: #ED7D3A;
+}
+
+#pm_settings .pm_tabs li.active a.pm_button {
+  color: #ED7D3A;
+}
+
+.pm_button.link {
+  color: #ED7D3A;
+}
+
+.pm_toggle.off .off, .pm_toggle.on .on {
+  background: #0F4C5C;
+  color: #fff;
+}
+
+.alert.alert-info {
+  background: #e6eaf0;
+  color: #000;
+}
+
+html.protonmail .text-purple {
+  color: #ED7D3A;
+}
+
+#pm_settings .bar em {
+  background: #ED7D3A;
+  height: 4px;
+}
+
+#pm_settings .bar {
+  background: #0F4C5C;
+  opacity: 0.5;
+  height: 4px;
+}
+
+#plans .plans .plan h3 {
+  background: #0F4C5C;
+  color: #fff;
+}
+
+#plans .plans .plan.plus-plan h3 span, #plans .plans .plan.visionary-plan h3 span, #plans .plans .plan.visionary-plan header {
+  color: #fff;
+}
+
+#plans .plans .plan footer .cycle strong {
+  color: #ED7D3A;
+}
+
+#plans .plans .plan footer .cycle .discount {
+  border-color: transparent #ED7D3A transparent transparent;
+}
+
+#plans .plans .plan footer .cycle .discount span {
+  color: #fff;
+}
+
+.pm_modal .modal-dialog {
+  border-color: #0F4C5C;
+}
+
+.pm_modal .modal-dialog .close {
+  color: #fff;
+  background: #0F4C5C;
+}
+
+.pm_badge {
+  color: #fff;
+}
+
+.pm_badge.primary {
+  background: #0F4C5C;
+  color: #fff;
+}
+
+.pm_badge.success {
+  background: #ED7D3A;
+  color: #fff;
+}
+
+.pm_table table th a, .pm_table table th .fa {
+  color: #ED7D3A;
+}
+
+body .cg-notify-message.notification-success {
+  background-color: #ED7D3A;
+  color: #fff;
+}
+    */
