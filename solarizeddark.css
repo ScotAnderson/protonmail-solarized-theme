@@ -17,3 +17,10 @@
   --cyan: #2aa198;
   --green: #859900; 
 }
+
+
+
+/* -- Left side bar ---------------------------------------------------- */
+body section.sidebar {
+  background: var(--base03);
+}
